@@ -12,6 +12,7 @@
 
 // Acronym List
 #init-acronyms((
+  "FIR":"Finite Impulse Response",
 
   
  
@@ -81,14 +82,112 @@
 
 = Introduction
 
+// TODO: Reference filter designer
+// TODO: Reference board
+The task provided centered around the implementation of #acr("FIR") filters for time domain signals. The signals to be used were derived from the student numbers of the students completing the task. Filters were created for each signal using MATLAB Filter Designer and tested within MATLAB. These filter coefficients were then exported as C header files and code for time domain filtering using the OMAP-L148 development boards was developed and optimised. The results of this were then compared against the MATLAB implementation to find the error.
 
-= Part 1
-= Part 2
-= Part 3
+= MATLAB Implementation
+
+The input signal was constructed by repeating each student's registration number one hundred times. The student numbers used are shown in @Student_Numbers and the resulting signal vectors are shown in @input_signals. Each mean of each vector was subtracted such that they were zero mean. The resulting signals are shown in @input_time_domain.
+
+
+$ S_1 = [2, 0, 2, 1, 1, 8, 8, 7, 4] \
+  S_2 = [2, 0, 2, 1, 1, 4, 6, 4, 2] $ <Student_Numbers>
+
+$ x_1 = [2, 0, 2, 1, 1, 8, 8, 7, 4, 2, 0, 2, ... , 8, 7, 4] \
+  x_2 = [2, 0, 2, 1, 1, 4, 6, 4, 2, 2, 0, 2, ... , 4, 6, 4] $ <input_signals>
+
+The sampling rate was derived from the average of the final four digits of each student number as shown in @student_2_fs.
+$ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
+
+
+
+
+= Embedded Implementation
+
+
+= Comparison
 
 = Conclusion
 
 = Figures and Tables
+== Part 1 
+
+== Input Signals
+#figure(
+  image("Subsections/Section 1/figs/Input_time.svg"),
+  caption: "Input signals in time domain",
+) <input_time_domain>
+
+#figure(
+  image("Subsections/Section 1/figs/input_freq.svg"),
+  caption: "Input signals in frequency domain. The first peak of both signals is at 752 Hz, and the second peak of the second signal is at 1504 Hz.",
+) <input_freq_domain>
+
+#figure(
+ image("Subsections/Section 1/figs/input_freq_zoomed.svg"),
+ caption: "Frequency domain plots of input signals zoomed to relevant peaks"
+)
+
+== Filter Design
+
+#figure(
+  image("Subsections/Section 1/figs/filter_coeffs.svg")
+)
+
+#figure(
+  image("Subsections/Section 1/figs/filter1_polezero.svg")
+
+)
+#figure(
+  image("Subsections/Section 1/figs/filter_1_magphase.svg")
+)
+
+
+#figure(
+  image("Subsections/Section 1/figs/filter2_polezero.svg")
+  
+)
+#figure(
+  image("Subsections/Section 1/figs/filter2_polezero_zoomed.svg")
+  
+)
+#figure(
+  image("Subsections/Section 1/figs/filter2_magphase.svg")
+  
+)
+
+== Filter Results
+
+#figure(
+  image("Subsections/Section 1/figs/filtered_time.svg")
+)
+#figure(
+  image("Subsections/Section 1/figs/filtered_freq.svg")
+)
+
+#figure(
+  image("Subsections/Section 1/figs/filtered_freq_zoomed.svg")
+)
+
+== Part 2 
+
+== Part 3
+
+#figure(
+  image("Subsections/Section 3/figs/filtered_time_c.svg")
+)
+#figure(
+  image("Subsections/Section 3/figs/filtered_time_error.svg")
+)
+
+
+#figure(
+  image("Subsections/Section 3/figs/filtered_freq_c.svg")
+)
+#figure(
+  image("Subsections/Section 3/figs/filtered_freq_error.svg")
+)
 
 = Code Listings
 == MATLAB Implementation
