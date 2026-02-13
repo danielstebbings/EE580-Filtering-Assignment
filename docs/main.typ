@@ -13,6 +13,7 @@
 // Acronym List
 #init-acronyms((
   "FIR":"Finite Impulse Response",
+  "FFT": "Fast Fourier Transform",
 
   
  
@@ -97,8 +98,9 @@ $ S_1 = [2, 0, 2, 1, 1, 8, 8, 7, 4] \
 $ x_1 = [2, 0, 2, 1, 1, 8, 8, 7, 4, 2, 0, 2, ... , 8, 7, 4] \
   x_2 = [2, 0, 2, 1, 1, 4, 6, 4, 2, 2, 0, 2, ... , 4, 6, 4] $ <input_signals>
 
-The sampling rate was derived from the average of the final four digits of each student number as shown in @student_2_fs.
-$ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
+The sampling rate was calculated by rounding the average of the final four digits of each student number as shown in @student_2_fs. The resulting time domain plots are shown in @input_time_domain. An 1024 point #acr("FFT") of each signal was computed, as shown in @input_freq_domain. It was found that both signals had a peak at 1504 Hz, and a second peak at 752 Hz. In accordance to the provided brief, the 1504 Hz peak in $x_1$ was selected for suppression, and the 752 Hz peak in $x_2$. A zoomed plot of the relevant peaks is shown in @input_freq_zoomed.
+
+$ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) = 6758 $ <student_2_fs>
 
 
 
@@ -109,6 +111,8 @@ $ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
 = Comparison
 
 = Conclusion
+
+#pagebreak()
 
 = Figures and Tables
 == Part 1 
@@ -127,47 +131,49 @@ $ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
 #figure(
  image("Subsections/Section 1/figs/input_freq_zoomed.svg"),
  caption: "Frequency domain plots of input signals zoomed to relevant peaks"
-)
+) <input_freq_zoomed>
 
 == Filter Design
 
 #figure(
-  image("Subsections/Section 1/figs/filter_coeffs.svg")
+  image("Subsections/Section 1/figs/filter_coeffs.svg"),
+  caption: "Coefficients of each filter"
 )
 
 #figure(
-  image("Subsections/Section 1/figs/filter1_polezero.svg")
+  image("Subsections/Section 1/figs/filter1_polezero.svg"),
+  caption: "Filter 1 Pole Zero"
 
 )
 #figure(
-  image("Subsections/Section 1/figs/filter_1_magphase.svg")
+  image("Subsections/Section 1/figs/filter_1_magphase.svg"),
 )
 
 
 #figure(
-  image("Subsections/Section 1/figs/filter2_polezero.svg")
+  image("Subsections/Section 1/figs/filter2_polezero.svg"),
   
 )
 #figure(
-  image("Subsections/Section 1/figs/filter2_polezero_zoomed.svg")
+  image("Subsections/Section 1/figs/filter2_polezero_zoomed.svg"),
   
 )
 #figure(
-  image("Subsections/Section 1/figs/filter2_magphase.svg")
+  image("Subsections/Section 1/figs/filter2_magphase.svg"),
   
 )
 
 == Filter Results
 
 #figure(
-  image("Subsections/Section 1/figs/filtered_time.svg")
+  image("Subsections/Section 1/figs/filtered_time.svg"),
 )
 #figure(
-  image("Subsections/Section 1/figs/filtered_freq.svg")
+  image("Subsections/Section 1/figs/filtered_freq.svg"),
 )
 
 #figure(
-  image("Subsections/Section 1/figs/filtered_freq_zoomed.svg")
+  image("Subsections/Section 1/figs/filtered_freq_zoomed.svg"),
 )
 
 == Part 2 
@@ -175,19 +181,21 @@ $ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
 == Part 3
 
 #figure(
-  image("Subsections/Section 3/figs/filtered_time_c.svg")
+  image("Subsections/Section 3/figs/filtered_time_c.svg"),
 )
 #figure(
-  image("Subsections/Section 3/figs/filtered_time_error.svg")
+  image("Subsections/Section 3/figs/filtered_time_error.svg"),
 )
 
 
 #figure(
-  image("Subsections/Section 3/figs/filtered_freq_c.svg")
+  image("Subsections/Section 3/figs/filtered_freq_c.svg"),
 )
 #figure(
-  image("Subsections/Section 3/figs/filtered_freq_error.svg")
+  image("Subsections/Section 3/figs/filtered_freq_error.svg"),
 )
+
+#pagebreak()
 
 = Code Listings
 == MATLAB Implementation
@@ -205,6 +213,6 @@ $ f_s = round( (S_1 [5:8] + S_2 [5:8]) /2 ) $ <student_2_fs>
 
   ),
 )
-#pagebreak()
+//#pagebreak()
 
 = Contributions
