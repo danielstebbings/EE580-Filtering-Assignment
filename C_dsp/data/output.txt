@@ -1,0 +1,27 @@
+scaled norm = 8191.750000 
+
+filter cycles: 15315458, seconds: 0.051052
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_standard.txt
+result[0] = -0.006214 [1] = -0.024535 [2] = -0.021525 [3] = -0.006034 [4] = -0.030431 [5] = -0.001987 [6] = 0.036203 [7] = -0.003167 [8] = -0.001912 [9] = -0.008543 
+symm cycles: 15393031, seconds: 0.051310
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_symmetric.txt
+result[0] = -0.006214 [1] = -0.024535 [2] = -0.021525 [3] = -0.006034 [4] = -0.030431 [5] = -0.001987 [6] = 0.036203 [7] = -0.003167 [8] = -0.001912 [9] = -0.008543 
+symm short cycles: 14427859, seconds: 0.048093
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_symmetric_fixed.txt
+result[0] = -0.006307 [1] = -0.024659 [2] = -0.021485 [3] = -0.006145 [4] = -0.030397 [5] = -0.003011 [6] = 0.032594 [7] = -0.003662 [8] = -0.001343 [9] = -0.010173 
+fir2 cycles: 7221905, seconds: 0.024073
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_fixed_simd.txt
+result[0] = -0.006348 [1] = -0.013673 [2] = -0.006348 [3] = -0.010255 [4] = -0.010255 [5] = -0.540560 [6] = -6.763108 [7] = 12.570103 [8] = 4.225356 [9] = 5.328938
+
+
+filter cycles: 15315458, seconds: 0.051052
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_standard.txt
+result[0] = -0.006205 [1] = -0.024536 [2] = -0.021556 [3] = -0.006022 [4] = -0.030406 [5] = -0.001984 [6] = 0.036275 [7] = -0.003062 [8] = -0.001852 [9] = -0.008606 
+symm cycles: 15393043, seconds: 0.051310
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_symmetric.txt
+result[0] = -0.006205 [1] = -0.024536 [2] = -0.021556 [3] = -0.006022 [4] = -0.030406 [5] = -0.001984 [6] = 0.036275 [7] = -0.003062 [8] = -0.001852 [9] = -0.008606 
+symm short cycles: 14427900, seconds: 0.048093
+Data saved in file: /home/preben/Documents/ee580_dsp/EE580-Filtering-Assignment/C_dsp/data/data_symmetric_fixed.txt
+result[0] = -0.006104 [1] = -0.024211 [2] = -0.021281 [3] = -0.005819 [4] = -0.030071 [5] = -0.003499 [6] = 0.032309 [7] = -0.003622 [8] = -0.001180 [9] = -0.009847 
+fir2 cycles: 7219817, seconds: 0.024066
+
